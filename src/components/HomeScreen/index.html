@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lavajato 7 de Setembro</title>
+    <link rel="stylesheet" href="/src/components/HomeScreen/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <h1>Lavajato 7 de Setembro</h1>
+        </div>
+        <nav>
+          <ul class="menu">
+            <li><a href="#" class="active">Início</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#sobre">Sobre Nós</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+          <div class="menu-mobile">
+            <i class="fas fa-bars"></i>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <section class="banner">
+      <div class="container">
+        <div class="banner-content">
+          <h2>Seu carro merece o melhor tratamento</h2>
+          <p>
+            Lavagem, polimento e estética automotiva com qualidade e excelência
+          </p>
+          <div class="banner-buttons">
+            <a href="#contato" class="btn">Agende Agora</a>
+            <a href="#servicos" class="btn btn-outline">Nossos Serviços</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicos" class="servicos">
+      <div class="container">
+        <h2 class="section-title">Nossos Serviços</h2>
+        <div class="servicos-grid">
+          <div class="servico-card">
+            <div class="icon">
+              <i class="fas fa-car-wash"></i>
+            </div>
+            <h3>Lavagem Completa</h3>
+            <p>Limpeza interna e externa com produtos de alta qualidade.</p>
+          </div>
+          <div class="servico-card">
+            <div class="icon">
+              <i class="fas fa-spray-can"></i>
+            </div>
+            <h3>Polimento</h3>
+            <p>Recupere o brilho original da pintura do seu veículo.</p>
+          </div>
+          <div class="servico-card">
+            <div class="icon">
+              <i class="fas fa-couch"></i>
+            </div>
+            <h3>Higienização</h3>
+            <p>Limpeza profunda de estofados e ar-condicionado.</p>
+          </div>
+          <div class="servico-card">
+            <div class="icon">
+              <i class="fas fa-tint"></i>
+            </div>
+            <h3>Enceramento</h3>
+            <p>Proteção e brilho duradouro para a pintura.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="sobre">
+      <div class="container">
+        <div class="sobre-content">
+          <div class="sobre-text">
+            <h2 class="section-title">Sobre Nós</h2>
+            <p>teste</p>
+            <p>teste</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="contato">
+      <div class="container">
+        <h2 class="section-title">Entre em Contato</h2>
+        <div class="contato-content">
+          <div class="contato-info">
+            <div class="info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <p>Av. 7 de Setembro, 1500 - Centro</p>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-phone"></i>
+              <p>(11) 99999-9999</p>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-envelope"></i>
+              <p>contato@lavajato7desetembro.com.br</p>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-clock"></i>
+              <p>Segunda a Sábado: 8h às 18h</p>
+            </div>
+
+            <!-- Mapa de localização -->
+            <div class="mapa-container">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1975132307853!2d-46.6549378!3d-23.5646162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMzJzUyLjUiUyA0NsKwMzknMTcuOCJX!5e0!3m2!1spt-BR!2sbr!4v1635789245619!5m2!1spt-BR!2sbr"
+                width="100%"
+                height="300"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+              >
+              </iframe>
+            </div>
+          </div>
+
+          <div class="contato-form">
+            <h3 class="form-title">Envie uma mensagem</h3>
+            <form>
+              <input type="text" placeholder="Nome" required />
+              <input type="email" placeholder="E-mail" required />
+              <input type="tel" placeholder="Telefone" required />
+              <select name="servico" required>
+                <option value="" disabled selected>
+                  Selecione o serviço desejado
+                </option>
+                <option value="lavagem">Lavagem Completa</option>
+                <option value="polimento">Polimento</option>
+                <option value="higienizacao">Higienização</option>
+                <option value="enceramento">Enceramento</option>
+                <option value="outro">Outro</option>
+              </select>
+              <textarea placeholder="Mensagem" required></textarea>
+              <button type="submit" class="btn">Enviar Mensagem</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-top">
+        <div class="container">
+          <div class="footer-columns">
+            <div class="footer-column">
+              <div class="footer-logo">
+                <h3>Lavajato 7 de Setembro</h3>
+                <p>Excelência em limpeza automotiva desde 2010</p>
+              </div>
+              <p class="footer-desc">
+                Oferecemos serviços de alta qualidade para cuidar do seu veículo
+                com produtos que respeitam o meio ambiente.
+              </p>
+            </div>
+
+            <div class="footer-column">
+              <h4>Links Rápidos</h4>
+              <ul class="footer-links">
+                <li><a href="#">Início</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#sobre">Sobre Nós</a></li>
+                <li><a href="#contato">Contato</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-column">
+              <h4>Nossos Serviços</h4>
+              <ul class="footer-links">
+                <li><a href="#servicos">Lavagem Completa</a></li>
+                <li><a href="#servicos">Polimento</a></li>
+                <li><a href="#servicos">Higienização</a></li>
+                <li><a href="#servicos">Enceramento</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-column">
+              <h4>Contato</h4>
+              <ul class="footer-contact">
+                <li>
+                  <i class="fas fa-map-marker-alt"></i> Av. 7 de Setembro, 1500
+                  - Centro
+                </li>
+                <li><i class="fas fa-phone"></i> (11) 99999-9999</li>
+                <li>
+                  <i class="fas fa-envelope"></i>
+                  contato@lavajato7desetembro.com.br
+                </li>
+                <li>
+                  <i class="fas fa-clock"></i> Segunda a Sábado: 8h às 18h
+                </li>
+              </ul>
+              <div class="footer-social">
+                <a href="#" aria-label="Facebook"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a href="#" aria-label="Instagram"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a href="#" aria-label="WhatsApp"
+                  ><i class="fab fa-whatsapp"></i
+                ></a>
+                <a href="#" aria-label="YouTube"
+                  ><i class="fab fa-youtube"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <p>
+            &copy; 2023 Lavajato 7 de Setembro. Todos os direitos reservados.
+          </p>
+          <div class="footer-legal">
+            <a href="#">Política de Privacidade</a>
+            <span class="separator">|</span>
+            <a href="#">Termos de Uso</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="whatsapp-float">
+        <a
+          href="https://wa.me/5511999999999"
+          target="_blank"
+          aria-label="Contato via WhatsApp"
+        >
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+    </footer>
+
+    <script src="/src/components/HomeScreen/index.js"></script>
+  </body>
+</html>
