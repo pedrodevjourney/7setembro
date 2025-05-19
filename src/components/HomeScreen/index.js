@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const menu = document.querySelector('.menu');
 
     menuMobile.addEventListener('click', function () {
+        this.classList.toggle('active');
         menu.classList.toggle('active');
-
 
         if (menu.classList.contains('active')) {
             menu.style.display = 'flex';
@@ -22,6 +22,13 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    const menuLinks = document.querySelectorAll('.menu a');
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            menuMobile.classList.remove('active');
+            menu.classList.remove('active');
+        });
+    });
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -37,7 +44,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     behavior: 'smooth'
                 });
 
-
                 if (menu.classList.contains('active')) {
                     menu.classList.remove('active');
                     menu.style.display = '';
@@ -46,30 +52,49 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    const header = document.querySelector('header');
+    let lastScroll = 0;
 
     window.addEventListener('scroll', function () {
-        const sections = document.querySelectorAll('section');
-        const menuItems = document.querySelectorAll('.menu a');
+        const currentScroll = window.pageYOffset;
 
+        if (currentScroll > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+
+        if (currentScroll > lastScroll && currentScroll > 100) {
+            header.style.transform = 'translateY(-100%)';
+        } else {
+            header.style.transform = 'translateY(0)';
+        }
+
+        lastScroll = currentScroll;
+    });
+
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.menu a');
+
+    window.addEventListener('scroll', () => {
         let current = '';
 
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.clientHeight;
 
-            if (pageYOffset >= sectionTop - 100) {
+            if (pageYOffset >= sectionTop - 200) {
                 current = section.getAttribute('id');
             }
         });
 
-        menuItems.forEach(item => {
-            item.classList.remove('active');
-            if (current && item.getAttribute('href') === `#${current}`) {
-                item.classList.add('active');
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').slice(1) === current) {
+                link.classList.add('active');
             }
         });
     });
-
 
     const animateElements = document.querySelectorAll('.servico-card, .sobre-content, .contato-content');
 
@@ -85,34 +110,81 @@ document.addEventListener('DOMContentLoaded', function () {
         observer.observe(element);
     });
 
-
     const form = document.querySelector('.contato-form form');
     if (form) {
         form.addEventListener('submit', function (e) {
             e.preventDefault();
 
-            let isValid = true;
-            const inputs = form.querySelectorAll('input, textarea, select');
+            const nome = document.querySelector('input[name="nome"]').value;
+            const email = document.querySelector('input[name="email"]').value;
+            const telefone = document.querySelector('input[name="telefone"]').value;
+            const servico = document.querySelector('select[name="servico"]').value;
+            const mensagem = document.querySelector('textarea[name="mensagem"]').value;
 
-            inputs.forEach(input => {
-                if (input.value.trim() === '' || (input.tagName === 'SELECT' && input.value === '')) {
-                    isValid = false;
-                    input.classList.add('error');
+            if (nome && email && telefone && servico && mensagem) {
+                const mensagemWhatsapp =
+                    `*Nova mensagem do site - Lavajato 7 de Setembro*\n\n` +
+                    `*Nome:* ${nome}\n` +
+                    `*E-mail:* ${email}\n` +
+                    `*Telefone:* ${telefone}\n` +
+                    `*Serviço:* ${servico}\n` +
+                    `*Mensagem:* ${mensagem}`;
 
+                const mensagemCodificada = encodeURIComponent(mensagemWhatsapp);
 
-                    input.addEventListener('input', function () {
-                        this.classList.remove('error');
-                    }, { once: true });
-                }
-            });
+                window.open(`https://wa.me/5537999610452?text=${mensagemCodificada}`, '_blank');
 
-            if (isValid) {
-
-                alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
                 form.reset();
             } else {
                 alert('Por favor, preencha todos os campos obrigatórios.');
             }
         });
     }
+
+    function initModal() {
+        const modalTriggers = document.querySelectorAll('.modal-trigger');
+        const closeButtons = document.querySelectorAll('.close-modal');
+
+        modalTriggers.forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                e.preventDefault();
+                const modalId = trigger.getAttribute('data-modal');
+                const modal = document.getElementById(`${modalId}-modal`);
+
+                if (modal) {
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+
+        closeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const modal = button.closest('.modal');
+                if (modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('modal')) {
+                e.target.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                const activeModal = document.querySelector('.modal.active');
+                if (activeModal) {
+                    activeModal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            }
+        });
+    }
+
+    initModal();
 });
