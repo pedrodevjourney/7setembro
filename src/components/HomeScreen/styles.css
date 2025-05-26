@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Poppins", sans-serif;
   color: #333;
   line-height: 1.6;
   padding-top: 80px;
@@ -35,6 +35,7 @@ ul {
   font-weight: 700;
   position: relative;
   padding-bottom: 15px;
+  font-family: "Poppins", sans-serif;
 }
 
 .section-title::after {
@@ -107,6 +108,7 @@ header.scrolled {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: all 0.3s ease;
+  font-family: "Poppins", sans-serif;
 }
 
 .logo-subtitle {
@@ -295,7 +297,9 @@ header.scrolled {
 }
 
 .sobre-text {
-  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.8;
+  color: #000000;
 }
 
 .banner-overlay {
@@ -331,6 +335,7 @@ header.scrolled {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: "Poppins", sans-serif;
 }
 
 .banner-subtitle {
@@ -591,6 +596,7 @@ header.scrolled {
   color: #1a1a1a;
   margin-bottom: 15px;
   font-weight: 700;
+  font-family: "Poppins", sans-serif;
 }
 
 .servico-card p {
@@ -754,6 +760,7 @@ footer {
   font-weight: 600;
   position: relative;
   padding-bottom: 10px;
+  font-family: "Poppins", sans-serif;
 }
 
 .footer-column h4::after {
@@ -770,6 +777,7 @@ footer {
   font-size: 1.8rem;
   margin-bottom: 10px;
   font-weight: 700;
+  font-family: "Poppins", sans-serif;
 }
 
 .footer-desc {
@@ -919,6 +927,7 @@ footer {
   margin-bottom: 20px;
   color: #0056b3;
   font-weight: 600;
+  font-family: "Poppins", sans-serif;
 }
 
 .contato-form select {
@@ -1110,6 +1119,7 @@ footer {
   background: linear-gradient(45deg, #0056b3, #003d7a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-family: "Poppins", sans-serif;
 }
 
 .close-modal {
@@ -1199,5 +1209,150 @@ footer {
 
   .modal-body h3 {
     font-size: 18px;
+  }
+}
+
+/* Antes e Depois */
+.antes-depois {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.antes-depois::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../../assets/pattern.png");
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.flipbox-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin: 50px 0;
+}
+
+.flipbox {
+  perspective: 1000px;
+  height: 400px;
+  cursor: pointer;
+}
+
+.flipbox-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.flipbox:hover .flipbox-inner {
+  transform: rotateY(180deg);
+}
+
+.flipbox-front,
+.flipbox-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.flipbox-front {
+  background-color: #fff;
+}
+
+.flipbox-back {
+  transform: rotateY(180deg);
+  background-color: #fff;
+}
+
+.flipbox-front img,
+.flipbox-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.flipbox:hover .flipbox-front img,
+.flipbox:hover .flipbox-back img {
+  transform: scale(1.1);
+}
+
+.flipbox-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  padding: 30px 20px;
+  color: white;
+  text-align: center;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.flipbox:hover .flipbox-overlay {
+  transform: translateY(0);
+}
+
+.flipbox-overlay h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-family: "Poppins", sans-serif;
+}
+
+.flipbox-overlay p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.antes-depois-cta {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.antes-depois-cta .btn {
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  background: linear-gradient(45deg, #0056b3, #003d7a);
+  border: none;
+  color: white;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0, 86, 179, 0.2);
+}
+
+.antes-depois-cta .btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 86, 179, 0.3);
+}
+
+@media (max-width: 768px) {
+  .flipbox-container {
+    grid-template-columns: 1fr;
+  }
+
+  .flipbox {
+    height: 300px;
+  }
+
+  .flipbox-overlay h3 {
+    font-size: 1.5rem;
   }
 }

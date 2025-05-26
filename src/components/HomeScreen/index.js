@@ -187,4 +187,32 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     initModal();
+
+    // Flipbox Animation
+    const flipboxes = document.querySelectorAll('.flipbox');
+
+    flipboxes.forEach(flipbox => {
+        flipbox.addEventListener('click', function () {
+            this.querySelector('.flipbox-inner').style.transform =
+                this.querySelector('.flipbox-inner').style.transform === 'rotateY(180deg)'
+                    ? 'rotateY(0deg)'
+                    : 'rotateY(180deg)';
+        });
+
+        // Adiciona efeito de hover com delay
+        let timeout;
+        flipbox.addEventListener('mouseenter', function () {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => {
+                this.querySelector('.flipbox-inner').style.transform = 'rotateY(180deg)';
+            }, 300);
+        });
+
+        flipbox.addEventListener('mouseleave', function () {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => {
+                this.querySelector('.flipbox-inner').style.transform = 'rotateY(0deg)';
+            }, 300);
+        });
+    });
 });
