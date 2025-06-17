@@ -1,0 +1,14 @@
+{
+  "name": "lavajato-7-setembro",
+  "version": "1.0.0",
+  "description": "Site do Lavajato 7 de Setembro",
+  "main": "src/components/HomeScreen/index.html",
+  "scripts": {
+    "dev": "npx serve src/components/HomeScreen",
+    "build": "echo 'Build completed'",
+    "start": "npx serve src/components/HomeScreen"
+  },
+  "keywords": ["lavajato", "car-wash", "automotive"],
+  "author": "Lavajato 7 de Setembro",
+  "license": "MIT"
+} 

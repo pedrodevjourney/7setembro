@@ -93,29 +93,49 @@ header.scrolled {
   padding: 15px 0;
 }
 
-.logo a {
-  text-decoration: none;
-  color: #1a1a1a;
+.logo {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  gap: 20px;
+}
+
+.logo-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.05);
 }
 
 .logo h1 {
   font-size: 1.8rem;
-  font-weight: 800;
   margin: 0;
+  font-weight: 700;
   background: linear-gradient(45deg, #0056b3, #003d7a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  transition: all 0.3s ease;
   font-family: "Poppins", sans-serif;
 }
 
 .logo-subtitle {
   font-size: 0.9rem;
   color: #666;
-  margin-top: 2px;
+  margin-top: 4px;
   font-weight: 500;
+  display: block;
 }
 
 .menu {
@@ -220,6 +240,27 @@ header.scrolled {
 
 /* Responsividade do Header */
 @media (max-width: 992px) {
+  .logo {
+    gap: 15px;
+  }
+
+  .logo a {
+    gap: 15px;
+  }
+
+  .logo-img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .logo h1 {
+    font-size: 1.5rem;
+  }
+
+  .logo-subtitle {
+    font-size: 0.8rem;
+  }
+
   .menu {
     display: none;
   }
@@ -231,23 +272,55 @@ header.scrolled {
   .menu-mobile {
     display: block;
   }
-
-  .logo h1 {
-    font-size: 1.5rem;
-  }
-
-  .logo-subtitle {
-    font-size: 0.8rem;
-  }
 }
 
 @media (max-width: 768px) {
-  .header-content {
-    padding: 10px 0;
+  .logo {
+    gap: 10px;
+  }
+
+  .logo a {
+    gap: 10px;
+  }
+
+  .logo-img {
+    width: 45px;
+    height: 45px;
   }
 
   .logo h1 {
     font-size: 1.3rem;
+  }
+
+  .logo-subtitle {
+    font-size: 0.75rem;
+  }
+
+  .header-content {
+    padding: 10px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    gap: 8px;
+  }
+
+  .logo a {
+    gap: 8px;
+  }
+
+  .logo-img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .logo h1 {
+    font-size: 1.1rem;
+  }
+
+  .logo-subtitle {
+    font-size: 0.7rem;
   }
 }
 

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lavajato 7 de Setembro</title>
-    <link rel="stylesheet" href="/src/components/HomeScreen/styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -20,10 +20,12 @@
         <div class="header-content">
           <div class="logo">
             <a href="#">
+              <img
+                src="./assets/logo.jpg"
+                alt="Logo Lavajato 7 de Setembro"
+                class="logo-img"
+              />
               <h1>Lavajato 7 de Setembro</h1>
-              <span class="logo-subtitle"
-                >Excelência em Estética Automotiva</span
-              >
             </a>
           </div>
           <nav>
@@ -61,7 +63,10 @@
         <div class="banner-content">
           <div class="banner-text">
             <h2>Excelência em Estética Automotiva</h2>
-            <p class="banner-subtitle">
+            <p
+              class="banner-subtitle"
+              style="text-align: justify; line-height: 1.6"
+            >
               Transformando seu veículo com tecnologia de ponta e atendimento
               premium
             </p>
@@ -95,7 +100,7 @@
       <div class="banner-overlay"></div>
       <div
         class="banner-background"
-        style="background-image: url('../../assets/carro.jpeg')"
+        style="background-image: url('./assets/carro.jpeg')"
       ></div>
     </section>
 
@@ -113,7 +118,13 @@
               <i class="fas fa-shower"></i>
             </div>
             <h3>Lavagem Completa</h3>
-            <p>
+            <p
+              style="
+                text-align: justify;
+                line-height: 1.6;
+                margin-bottom: 1.5rem;
+              "
+            >
               Lavagem completa interna e externa com produtos de alta qualidade
               e tecnologia de ponta.
             </p>
@@ -132,7 +143,13 @@
               <i class="fas fa-spray-can"></i>
             </div>
             <h3>Vitrificação</h3>
-            <p>
+            <p
+              style="
+                text-align: justify;
+                line-height: 1.6;
+                margin-bottom: 1.5rem;
+              "
+            >
               Proteção avançada para a pintura do seu veículo com duração de até
               12 meses.
             </p>
@@ -151,7 +168,13 @@
               <i class="fas fa-couch"></i>
             </div>
             <h3>Higienização Completa</h3>
-            <p>
+            <p
+              style="
+                text-align: justify;
+                line-height: 1.6;
+                margin-bottom: 1.5rem;
+              "
+            >
               Limpeza profunda de estofados e ar-condicionado com produtos
               especiais.
             </p>
@@ -170,7 +193,15 @@
               <i class="fas fa-tint"></i>
             </div>
             <h3>Enceramento</h3>
-            <p>Proteção e brilho duradouro para a pintura do seu veículo.</p>
+            <p
+              style="
+                text-align: justify;
+                line-height: 1.6;
+                margin-bottom: 1.5rem;
+              "
+            >
+              Proteção e brilho duradouro para a pintura do seu veículo.
+            </p>
             <ul class="servico-features">
               <li><i class="fas fa-check"></i> Enceramento profissional</li>
               <li><i class="fas fa-check"></i> Proteção contra riscos</li>
@@ -184,7 +215,15 @@
               <i class="fas fa-paint-roller"></i>
             </div>
             <h3>Polimento</h3>
-            <p>Recuperação do brilho e remoção de imperfeições da pintura.</p>
+            <p
+              style="
+                text-align: justify;
+                line-height: 1.6;
+                margin-bottom: 1.5rem;
+              "
+            >
+              Recuperação do brilho e remoção de imperfeições da pintura.
+            </p>
             <ul class="servico-features">
               <li><i class="fas fa-check"></i> Remoção de riscos leves</li>
               <li><i class="fas fa-check"></i> Correção de manchas</li>
@@ -198,7 +237,15 @@
               <i class="fas fa-car-battery"></i>
             </div>
             <h3>Detalhamento de Motor</h3>
-            <p>Limpeza e proteção completa do compartimento do motor.</p>
+            <p
+              style="
+                text-align: justify;
+                line-height: 1.6;
+                margin-bottom: 1.5rem;
+              "
+            >
+              Limpeza e proteção completa do compartimento do motor.
+            </p>
             <ul class="servico-features">
               <li><i class="fas fa-check"></i> Limpeza profunda</li>
               <li><i class="fas fa-check"></i> Proteção contra corrosão</li>
@@ -211,80 +258,15 @@
       </div>
     </section>
 
-    <section id="antes-depois" class="antes-depois">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Transformações Impressionantes</h2>
-          <p class="section-subtitle">
-            Veja o poder da nossa tecnologia e dedicação
-          </p>
-        </div>
-
-        <div class="flipbox-container">
-          <div class="flipbox">
-            <div class="flipbox-inner">
-              <div class="flipbox-front">
-                <img src="../../assets/carro-sujo1.jpg" />
-                <div class="flipbox-overlay"></div>
-              </div>
-              <div class="flipbox-back">
-                <img src="../../assets/carro-limpo1.jpg" />
-                <div class="flipbox-overlay">
-                  <h3>Depois</h3>
-                  <p>Resultado Premium</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="flipbox">
-            <div class="flipbox-inner">
-              <div class="flipbox-front">
-                <img src="../../assets/carro-sujo2.jpg" />
-                <div class="flipbox-overlay"></div>
-              </div>
-              <div class="flipbox-back">
-                <img src="../../assets/carro-limpo2.jpg" />
-                <div class="flipbox-overlay">
-                  <h3>Depois</h3>
-                  <p>Resultado Premium</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="flipbox">
-            <div class="flipbox-inner">
-              <div class="flipbox-front">
-                <img src="../../assets/carro-sujo3.jpg" />
-                <div class="flipbox-overlay"></div>
-              </div>
-              <div class="flipbox-back">
-                <img src="../../assets/carro-limpo3.jpg" />
-                <div class="flipbox-overlay">
-                  <h3>Depois</h3>
-                  <p>Resultado Premium</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="antes-depois-cta">
-          <a href="#contato" class="btn btn-primary">
-            <i class="fas fa-calendar-check"></i>
-            Agende Sua Transformação
-          </a>
-        </div>
-      </div>
-    </section>
-
     <section id="sobre" class="sobre">
       <div class="container">
         <div class="sobre-content">
           <div class="sobre-text">
             <h2 class="section-title">Sobre Nós</h2>
-            <p class="sobre-text">
+            <p
+              class="sobre-text"
+              style="text-align: justify; line-height: 1.8; margin-bottom: 2rem"
+            >
               No Lava Jato Sete de Setembro, cuidamos do seu veículo com
               responsabilidade, agilidade e atenção aos detalhes. Localizado em
               Formiga, MG, somos referência em limpeza automotiva, oferecendo
@@ -382,7 +364,10 @@
               <div class="footer-logo">
                 <h3>Lavajato 7 de Setembro</h3>
               </div>
-              <p class="footer-desc">
+              <p
+                class="footer-desc"
+                style="text-align: justify; line-height: 1.6"
+              >
                 Oferecemos serviços de alta qualidade para cuidar do seu veículo
                 com produtos que respeitam o meio ambiente.
               </p>
@@ -560,6 +545,6 @@
       </div>
     </footer>
 
-    <script src="/src/components/HomeScreen/index.js"></script>
+    <script src="./index.js"></script>
   </body>
 </html>
